@@ -1,2 +1,2 @@
-# qbcart..github.io
+# QBCart
 The marketing website.
