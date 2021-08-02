@@ -1,8 +1,61 @@
+
+
+
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
+    --header-width: 100vw;
+    --header-height: calc( var(--header-width) * 0.4 )
 }
 
-h1 {
-    color: blue;
+#header {
+    display: block;
+    width: var(--header-width);
+    height: var(--header-height);
+    background-image: url('./images/phone-hero.jpeg');
+    background-size: cover;
+    background-position: center;
+    padding: 60px;
+}
+
+#header-content {
+    display: flex;
+    flex-direction: column;
+    width: calc(var(--header-width) * 0.4);
+}
+
+#title {
+    font-size: 50px;
+    font-weight: 500;
+    color: white;
+}
+
+#subtitle {
+    font-size: 16px;
+    /* font-weight: 100; */
+    color: white;
+    margin: 20px 0;
+}
+
+#header-cta {
+    display: flex;
+    height: 50px;
+    /* width: 200px; */
+}
+
+.cta-input {
+    border: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    padding: 15px;
+}
+
+.cta-button {
+    border: none;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: orange;
+    color: white;
+    padding: 15px;
 }
