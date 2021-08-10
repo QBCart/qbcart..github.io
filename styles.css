@@ -6,7 +6,8 @@ body {
     padding: 0;
     font-family: 'Roboto', sans-serif;
     --header-width: 100vw;
-    --header-height: calc( var(--header-width) * 0.4 )
+    --header-height: calc( var(--header-width) * 0.4 );
+    --triplet-width: calc(100vw / 3);
 }
 
 #header {
@@ -58,4 +59,29 @@ body {
     background-color: orange;
     color: white;
     padding: 15px;
+}
+
+.section {
+    background-color:#8bc34a;
+    color: white;
+    display: flex;
+}
+
+.triplet {
+    display: block;
+    width: var(--triplet-width);
+    padding: 20px;
+}
+
+.triplet-img {
+    display: block;
+    width: auto;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.triplet-title {
+    text-align: center;
+    font-size: 30px;
+    margin: 10px;
 }
