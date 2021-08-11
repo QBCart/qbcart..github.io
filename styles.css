@@ -69,7 +69,7 @@ body {
 
 .cta-button:hover {
     cursor: pointer;
-    background-color: #e69500;
+    background-image: linear-gradient(to right, #cc8500 , #ffa500);
 }
 
 #header-rating {
@@ -83,18 +83,32 @@ body {
     color: darkgray;
 }
 
-.star {
+#stars .material-icons {
     color: goldenrod;
+    font-size: calc(var(--header-content-height) * 0.06);
+    line-height: calc(var(--header-content-height) * 0.06);
 }
 
 #companies-carousel {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     width: 100vw;
-    height: 8vw;
+    padding: 1vw;
     background-color: darkslategray;
 }
 
-.section {
+.company-logo {
+    display: block;
+    height: 6vw;
+    width: 6vw;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.triplet-section {
     background-color:#8bc34a;
     color: white;
     display: flex;
@@ -117,6 +131,35 @@ body {
     text-align: center;
     font-size: 30px;
     margin: 10px;
+}
+
+.section-break {
+    display: block;
+    height: 1px;
+    width: 80vw;
+    margin: 2vw 10vw;
+    background-color:#8bc34a;
+}
+
+.single-section {
+    display: flex;
+    width: 100vw;
+    justify-content: center; 
+    padding: 5vw 0;
+}
+
+.single-img {
+    display: block;
+    width: 30vw;
+    height: 30vw;
+    background-color: grey;
+}
+
+.single-content {
+    display: block;
+    width: 60vw;
+    height: 30vw;
+    background-color: lightgrey;
 }
 
 @media screen and (min-width: 1200px) {
