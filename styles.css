@@ -5,60 +5,93 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    --header-width: 100vw;
-    --header-height: calc( var(--header-width) * 0.4 );
     --triplet-width: calc(100vw / 3);
+    --header-content-width: 50vw;
+    --header-content-height: calc(var(--header-content-width) * 0.65 );
+    --header-img-width: 50vw;
 }
 
 #header {
-    display: block;
-    width: var(--header-width);
-    height: var(--header-height);
-    background-image: url('./images/phone-hero.jpeg');
-    background-size: cover;
-    background-position: center;
-    padding: 60px;
+    display: flex;
+    width: 100vw;
+    background-image: linear-gradient(to right, #354d19 , #8bc34a);
+    justify-content: space-between;
 }
 
 #header-content {
     display: flex;
     flex-direction: column;
-    width: calc(var(--header-width) * 0.4);
+    width: var(--header-content-width);
+    height: var(--header-content-height);
+    /* background-color: lightgray; */
+    margin: 2vw;
 }
 
+#header-img {
+    display: block;
+    width: var(--header-img-width);
+    background-image: url('images/tablets.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* border: 1px solid grey; */
+    margin: 2vw;
+}
 #title {
     font-size: 50px;
+    font-size: calc(var(--header-content-height) * 0.17);
     font-weight: 500;
     color: white;
 }
 
 #subtitle {
     font-size: 16px;
-    /* font-weight: 100; */
+    font-size: calc(var(--header-content-height) * 0.05);
+    margin: calc(var(--header-content-height) * 0.05) 0;
     color: white;
-    margin: 20px 0;
-}
-
-#header-cta {
-    display: flex;
-    height: 50px;
-    /* width: 200px; */
-}
-
-.cta-input {
-    border: none;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-    padding: 15px;
 }
 
 .cta-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4vw;
+    width: 16vw;
     border: none;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
-    background-color: orange;
+    border-radius: 2vw;
+    font-size: 1.4vw;
+    line-height: 1.4vw;
+    background-color: #ffa500;
     color: white;
-    padding: 15px;
+    padding: 1vw;
+    margin: 1vw 0;
+}
+
+.cta-button:hover {
+    cursor: pointer;
+    background-color: #e69500;
+}
+
+#header-rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(var(--header-content-width) * 0.65);
+    margin: calc(var(--header-content-height) * 0.05) 0;
+    font-size: calc(var(--header-content-height) * 0.045);
+    line-height: calc(var(--header-content-height) * 0.045);
+    color: darkgray;
+}
+
+.star {
+    color: goldenrod;
+}
+
+#companies-carousel {
+    display: block;
+    width: 100vw;
+    height: 8vw;
+    background-color: darkslategray;
 }
 
 .section {
@@ -85,3 +118,29 @@ body {
     font-size: 30px;
     margin: 10px;
 }
+
+@media screen and (min-width: 1200px) {
+    body {
+        --header-content-width: 600px;
+        --header-img-width: 600px;
+    }
+    #header {
+        justify-content: space-around;
+    }
+
+    .cta-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 48px;
+        width: 192px;
+        border: none;
+        border-radius: 24px;
+        font-size: 16px;
+        line-height: 16px;
+        background-color: #ffa500;
+        color: white;
+        padding: 12px;
+        margin: 12px 0;
+    }
+  }
