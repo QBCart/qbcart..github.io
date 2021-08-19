@@ -61,7 +61,7 @@ body {
 
 #subtitle {
     font-size: calc(var(--header-content-height) * 0.05);
-    font-weight: 100;
+    font-weight: 300;
     margin: calc(var(--header-content-height) * 0.05) 0;
     color: black;
 }
@@ -160,6 +160,10 @@ body {
     background-color:black;
 }
 
+.triplet-text {
+    font-weight: 300;
+}
+
 .single-section {
     display: flex;
     width: 100vw;
@@ -218,3 +222,22 @@ body {
         margin: 12px 0;
     }
   }
+
+  @media screen and (max-width: 450px) {
+    body {
+        --header-content-width: 100vw;
+        --header-img-width: 96vw;
+    }
+    
+    #header {
+        flex-direction: column;
+    }
+
+    #header-img {
+        height: 80vw;
+    }
+
+    .single-img {
+        display: none;
+    }
+   }
