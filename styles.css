@@ -264,6 +264,49 @@ body {
     margin-right: 5vw;
 }
 
+#founders-note {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#founders-content {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+}
+
+#founders-title { 
+    font-size: 3vw;
+    font-weight: 500;
+    margin: 2vw 0;
+}
+
+#founders-text { 
+    position: relative;
+    font-size: 1.5vw;
+    font-weight: 200;
+    margin: 1vw 0;
+}
+
+#founders-text a {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+#founders-img {
+    display: block;
+    width: 40vw;
+    height: 40vw;
+    background-image: url('images/sticky-notes.jpeg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 @media screen and (min-width: 1400px) { 
     .single-title {
         font-size: 26px;
