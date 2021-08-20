@@ -268,6 +268,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 3vw 0;
 }
 
 #founders-content {
@@ -299,9 +300,9 @@ body {
 
 #founders-img {
     display: block;
-    width: 40vw;
-    height: 40vw;
-    background-image: url('images/sticky-notes.jpeg');
+    width: 35vw;
+    height: 35vw;
+    background-image: url('images/logo-on-building.jpg');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
