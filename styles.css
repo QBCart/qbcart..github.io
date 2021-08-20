@@ -325,7 +325,7 @@ body {
 
     #header-img {
         height: 80vw;
-        display: none;
+        /* display: none; */
     }
 
     .single-img {
