@@ -328,10 +328,30 @@ body {
         /* display: none; */
     }
 
+    .cta-button {
+        height: 8vw;
+        width: 32vw;
+        border-radius: 4vw;
+        font-size: 2.8vw;
+        line-height: 2.8vw;
+        padding: 2vw;
+        margin: 2vw 0;
+    }
+
     .single-img {
         display: none;
     }
     .single-title {
         margin-bottom: 5vw;
+    }
+
+    .cta-banner {
+        flex-direction: column;
+    }
+    
+    .cta-text {
+        font-size: 3vw;
+        margin-left: 5vw;
+        text-align: center;
     }
    }
