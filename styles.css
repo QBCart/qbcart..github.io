@@ -319,13 +319,36 @@ body {
     
     #header {
         width: 90vw;
+        height: 60vw;
         padding: 5vw;
         flex-direction: column;
     }
 
+    #header-lower {
+        display: flex;
+    }
+
+    #header-rating {
+        height: 8vw;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 40vw;
+    }
+
     #header-img {
         height: 80vw;
-        /* display: none; */
+        display: none;
+    }
+
+    #header-img-mobile {
+        display: block;
+        width: 55vw;
+        background-image: url('images/tablets.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     .cta-button {
