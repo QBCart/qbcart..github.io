@@ -264,6 +264,46 @@ body {
     margin-right: 5vw;
 }
 
+#testimonials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 15vw;
+    background-color: #d76d52;
+    color: #8bc34a;
+    font-size: 2vw;
+    line-height: 4.5vw;
+    font-style: italic;
+}
+
+.testimonial-shown {
+    display: visible;
+    animation-duration: 5s;
+    animation-name: testimonialFade;
+    width: 70vw;
+    text-align: center;
+}
+
+@keyframes testimonialFade {
+    from {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.testimonial-hidden {
+    display: none;
+}
+
 #founders-note {
     display: flex;
     justify-content: space-around;
@@ -455,6 +495,7 @@ body {
 
     .single-text {
         margin: 1vw 0; 
+        font-size: 2.5vw;
     }
 
     .cta-banner {
@@ -467,6 +508,10 @@ body {
         margin-top: 3vw;
         margin-bottom: 2vw;
         text-align: center;
+    }
+
+    #testimonials {
+        font-size: 3vw;
     }
 
     #founders-note {
