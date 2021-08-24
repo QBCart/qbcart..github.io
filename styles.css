@@ -381,6 +381,7 @@ body {
     width: 100vw;
     justify-content: center;
     align-items: center;
+    font-size: 1.25vw;
     font-weight: 300;
 }
 
@@ -424,6 +425,42 @@ body {
 
     .cta-text {
         font-size: 18px;
+    }
+
+    #testimonials {
+        height: 200px;
+        font-size: 24px;
+        line-height: 45px;
+    }
+
+    #founders-title { 
+        font-size: 48px;
+    }
+    
+    #founders-text { 
+        font-size: 20px;
+    }
+    
+    #founders-img {
+        width: 400px;
+        height: 400px;
+    }
+
+    #q-and-a {
+        width: 800px;
+        height: unset;
+    }
+
+    #q-and-a-title {
+        font-size: 32px;
+    }
+    
+    #q-and-a-subtitle {
+        font-size: 20px;
+    }
+
+    #footer {
+        font-size: 15px;
     }
 
   }
