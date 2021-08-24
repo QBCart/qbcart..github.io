@@ -348,6 +348,41 @@ body {
     background-repeat: no-repeat;
 }
 
+#q-and-a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    height: 4vw;
+    border: 1px solid grey;
+    border-radius: 1vw;
+    margin: 1vw auto;
+}
+
+#q-and-a-title {
+    font-size: 2vw;
+    font-weight: 400;
+    margin: 0 1vw;
+}
+
+#q-and-a-text {
+    font-size: 1vw;
+    font-weight: 100;
+}
+
+#q-and-a-subtitle a {
+    text-decoration: none;
+}
+
+#footer {
+    display: flex;
+    height: 15vw;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    font-weight: 300;
+}
+
 @media screen and (min-width: 1400px) { 
     .single-title {
         font-size: 26px;
