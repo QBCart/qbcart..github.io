@@ -447,8 +447,14 @@ body {
     .single-img {
         display: none;
     }
+
     .single-title {
         margin-bottom: 5vw;
+        text-align: center;
+    }
+
+    .single-text {
+        margin: 1vw 0; 
     }
 
     .cta-banner {
@@ -462,4 +468,23 @@ body {
         margin-bottom: 2vw;
         text-align: center;
     }
+
+    #founders-note {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    #founders-content {
+        width: 60vw;
+    }
+    
+    #founders-title { 
+        font-size: 5vw;
+    }
+    
+    #founders-text { 
+        font-size: 2.75vw;
+        margin: 1vw 0;
+    }
+
    }
