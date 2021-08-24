@@ -357,6 +357,7 @@ body {
     border: 1px solid grey;
     border-radius: 1vw;
     margin: 1vw auto;
+    padding: 1vw;
 }
 
 #q-and-a-title {
@@ -365,9 +366,9 @@ body {
     margin: 0 1vw;
 }
 
-#q-and-a-text {
-    font-size: 1vw;
-    font-weight: 100;
+#q-and-a-subtitle {
+    font-size: 1.5vw;
+    font-weight: 300;
 }
 
 #q-and-a-subtitle a {
@@ -555,7 +556,7 @@ body {
     }
 
     #founders-content {
-        width: 60vw;
+        width: 70vw;
     }
     
     #founders-title { 
@@ -565,6 +566,30 @@ body {
     #founders-text { 
         font-size: 2.75vw;
         margin: 1vw 0;
+    }
+
+    #founders-img {
+        width: 60vw;
+        height: 60vw;
+    }
+
+    #q-and-a {
+        flex-direction: column;
+        height: 15vw;
+        text-align: center;
+    }
+    
+    #q-and-a-title {
+        font-size: 4vw;
+        margin: 0 1vw;
+    }
+    
+    #q-and-a-subtitle {
+        font-size: 3.3vw;
+    }
+    
+    #footer {
+        font-size: 2.5vw;
     }
 
    }
