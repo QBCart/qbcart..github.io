@@ -31,8 +31,6 @@ function incrementCount() {
     } else {
         countIndex = 0
     };
-    console.log(countIndex)
-    console.log(testimonials.length - 1)
     
     testimonials[countIndex].classList.remove('testimonial-hidden');
     testimonials[countIndex].classList.add('testimonial-shown');
