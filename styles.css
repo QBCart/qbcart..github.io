@@ -383,6 +383,7 @@ body {
     align-items: center;
     font-size: 1.25vw;
     font-weight: 300;
+    color: grey;
 }
 
 @media screen and (min-width: 1400px) { 
@@ -474,7 +475,7 @@ body {
     
     #header {
         width: 90vw;
-        height: 65vw;
+        height: 70vw;
         padding: 5vw;
         flex-direction: column;
     }
@@ -506,6 +507,10 @@ body {
         background-repeat: no-repeat;
     }
 
+    #subtitle {
+        font-size: calc(var(--header-content-height) * 0.075);
+    }
+
     .cta-button {
         height: 8vw;
         width: 32vw;
@@ -534,7 +539,11 @@ body {
         height: 45vw;
         width: 45vw;  
     }
-    
+
+    .triplet-title {
+        font-size: calc(var(--triplet-width) * 0.1);
+    }
+
     .triplet-title.triplet-mobile {
         text-align: center;
         font-size: 5vw;
@@ -542,10 +551,12 @@ body {
         margin-bottom: 5vw;
         height: 10vw;
     }
-    
+
+   
     .triplet-text.triplet-mobile {
-        font-size: 3vw; 
-        margin: 1.5vw auto;
+        font-size: 3.5vw; 
+        line-height: 5vw;
+        margin: 2vw auto;
     }
 
     .line-break-mobile {
@@ -556,19 +567,24 @@ body {
         margin: 8vw auto;
     }
     
+    .single-section {
+        padding: 8vw 0;
+    }
 
     .single-img {
         display: none;
     }
 
     .single-title {
+        font-size: 5vw;
         margin-bottom: 5vw;
         text-align: center;
     }
 
     .single-text {
-        margin: 1vw 0; 
-        font-size: 2.5vw;
+        margin: 2vw 0; 
+        font-size: 3.5vw;
+        line-height: 5vw;
     }
 
     .cta-banner {
@@ -576,7 +592,7 @@ body {
     }
     
     .cta-text {
-        font-size: 3vw;
+        font-size: 3.5vw;
         margin-left: 5vw;
         margin-top: 3vw;
         margin-bottom: 2vw;
@@ -584,7 +600,8 @@ body {
     }
 
     #testimonials {
-        font-size: 3vw;
+        height: 22vw;
+        font-size: 3.5vw;
     }
 
     #founders-note {
@@ -601,8 +618,9 @@ body {
     }
     
     #founders-text { 
-        font-size: 2.75vw;
-        margin: 1vw 0;
+        font-size: 3.5vw;
+        line-height: 5vw;
+        margin: 2vw 0;
     }
 
     #founders-img {
