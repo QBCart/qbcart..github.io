@@ -466,6 +466,10 @@ body {
 
   }
 
+  @media screen and (min-width: 1200px) {
+      
+  }
+
   @media screen and (max-width: 450px) {
     body {
         --header-content-width: 90vw;
