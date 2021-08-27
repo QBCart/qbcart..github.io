@@ -31,7 +31,7 @@ body {
 
 #modal-body {
     display: block;
-    padding: 3vw 1vw;
+    padding: 1vw;
 }
 
 .modal-text-line {
@@ -615,6 +615,11 @@ body {
   }
 
   @media screen and (max-width: 450px) {
+
+    #modal-body {
+        padding: 3vw 1vw;
+    }
+
     body {
         --header-content-width: 90vw;
         --header-img-width: 96vw;
