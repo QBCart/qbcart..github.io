@@ -9,6 +9,29 @@ function hideModal() {
     backdrop.style.display = 'none';
 }
 
+// modal dynamic input logic
+const inputWrappers = document.querySelectorAll('.modal-input-wrapper');
+const inputLabels = document.querySelectorAll('.modal-input-label');
+const inputFields = document.querySelectorAll('.modal-input-field');
+
+// redirect focus from label to input on click
+inputLabels.forEach( label => { 
+    label.addEventListener("click", () => label.nextElementSibling.focus());
+});
+
+inputFields.forEach( field => {
+    field.addEventListener("change", () => {
+        if (field.value) {
+            field.classList.add('field-focused');
+            field.previousElementSibling.classList.add('label-focused');
+        } else {
+            field.classList.remove('field-focused');
+            field.previousElementSibling.classList.remove('label-focused');
+        }
+    })
+})
+
+
 
 // cta listeners
 document.querySelectorAll('.cta-button').forEach( button => { 
