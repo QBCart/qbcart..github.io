@@ -61,7 +61,6 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active {
     -webkit-appearance: none;
-    -webkit-border-radius: 0;
 }
 
 
