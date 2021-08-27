@@ -636,6 +636,10 @@ input[type=submit] {
 
   @media screen and (max-width: 450px) {
 
+    #modal {
+       margin: 0 5px;
+    }
+
     #modal-body {
         padding: 3vw 1vw;
     }
