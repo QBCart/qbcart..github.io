@@ -51,19 +51,14 @@ body {
 
 /* MODAL DYNAMIC INPUT STYLES */
 
-
-/* remove webkit styles on input fields */
+/* remove webkit styles */
+input[type=submit], 
+input[type=text], 
+input[type="email"], 
 input:-webkit-autofill,
-    input:-webkit-autofill:hover, 
-    input:-webkit-autofill:focus, 
-    input:-webkit-autofill:active
-    {
-    -webkit-box-shadow: 0 0 0 30px white inset !important;
-    -webkit-text-fill-color: black !important;
-    }
-
-/* remove webkit styles on submit button */
-input[type=submit] {
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
     -webkit-appearance: none;
     -webkit-border-radius: 0;
 }
