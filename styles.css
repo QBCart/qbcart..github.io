@@ -825,6 +825,21 @@ input:-webkit-autofill:active {
         font-weight: 300;
     }
 
+    .truncate-overflow {
+        --max-lines: 4;
+        max-height: calc(3.5vw * var(--max-lines));
+      }
+      .truncate-overflow::before {
+        right: -3vw; /* "right" */
+        width: 20vw;
+        height: 3.5vw;
+      }
+      .truncate-overflow::after {
+        right: -3vw; /* "right" */
+        width: 20vw;
+        height: 3.5vw;
+      }
+
     #founders-img {
         width: 60vw;
         height: 60vw;
