@@ -1,67 +1,88 @@
 // modal view logic
 const backdrop = document.getElementById('backdrop');
 
-function showModal() {
+function showCtaModal() {
     backdrop.style.display = 'flex';
 }
 
-function hideModal() {
+function hideCtaModal() {
     backdrop.style.display = 'none';
 }
 
-// // modal dynamic input logic
-// const inputWrappers = document.querySelectorAll('.modal-input-wrapper');
-// const inputLabels = document.querySelectorAll('.modal-input-label');
-// const inputFields = document.querySelectorAll('.modal-input-field');
+// modal dynamic input logic
+const inputWrappers = document.querySelectorAll('.modal-input-wrapper');
+const inputLabels = document.querySelectorAll('.modal-input-label');
+const inputFields = document.querySelectorAll('.modal-input-field');
 
-// // redirect focus from label to input on click
-// inputLabels.forEach( label => { 
-//     label.addEventListener("click", () => label.nextElementSibling.focus());
-// });
+// redirect focus from label to input on click
+inputLabels.forEach( label => { 
+    label.addEventListener("click", () => label.nextElementSibling.focus());
+});
 
-// inputFields.forEach( field => {
-//     field.addEventListener("change", () => {
-//         if (field.value) {
-//             field.classList.add('field-focused');
-//             field.previousElementSibling.classList.add('label-focused');
-//         } else {
-//             field.classList.remove('field-focused');
-//             field.previousElementSibling.classList.remove('label-focused');
-//         }
-//     })
-// })
+inputFields.forEach( field => {
+    field.addEventListener("change", () => {
+        if (field.value) {
+            field.classList.add('field-focused');
+            field.previousElementSibling.classList.add('label-focused');
+        } else {
+            field.classList.remove('field-focused');
+            field.previousElementSibling.classList.remove('label-focused');
+        }
+    })
+})
 
 
 
 // cta listeners
 document.querySelectorAll('.cta-button').forEach( button => { 
-    button.addEventListener("click", showModal);
+    button.addEventListener("click", showCtaModal);
 });
 
 // close button listener
-// document.querySelector('#modal-close-btn').addEventListener( "click", hideModal);
+document.querySelector('#modal-close-btn').addEventListener( "click", hideCtaModal);
 
 
 
-// submit button logic
+// cta form submit logic
 
-const ctaForm = document.querySelector('#cta-form')
-function submitForm(e) {
-    console.log(document.querySelector('#firstname').value)
-    const data = new FormData(ctaForm)
-    console.log(data)
-    e.preventDefault()
-    // const response = await fetch(url, {
-    //     method: 'POST', 
-    //     mode: 'cors',
-    //     headers: {
-    //         'Content-Type': 'application/x-www-form-urlencoded'
-    //     },
-    //     body: JSON.stringify(data) // body data type must match "Content-Type" header
-    // });
-    // const json = await response.json(); // parses JSON response into native JavaScript objects
+const ctaForm = document.querySelector('#cta-form');
+
+async function submitForm(e) {
+
+    e.preventDefault();
+
+    try {
+        const response = await fetch('https://landing-page-api.azurewebsites.net/api/demo', {
+        method: 'POST', 
+        mode: 'cors',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new FormData(ctaForm)
+    });
+
+    if (response.ok) {
+        // close the form modal
+        hideCtaModal()
+        // create modal that confirms & gives further instructions
+    
+    } else {
+        // the form modal remains open
+        // inject message at the top on the form 
+        // oops there was an error, please check data & try again
+        // if the issue persists, contact support
+    }
+        
+    } catch (error) {
+        // the form modal remains open
+        // inject message at the top on the form 
+        // there may be a problem with the internet please try again at a later time
+    }
+ 
+    
 }
-ctaForm.addEventListener("submit", submitForm);
+
+ctaForm.onsubmit = submitForm;
 
 // testimonial slider
 
