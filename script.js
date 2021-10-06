@@ -9,27 +9,27 @@ function hideModal() {
     backdrop.style.display = 'none';
 }
 
-// modal dynamic input logic
-const inputWrappers = document.querySelectorAll('.modal-input-wrapper');
-const inputLabels = document.querySelectorAll('.modal-input-label');
-const inputFields = document.querySelectorAll('.modal-input-field');
+// // modal dynamic input logic
+// const inputWrappers = document.querySelectorAll('.modal-input-wrapper');
+// const inputLabels = document.querySelectorAll('.modal-input-label');
+// const inputFields = document.querySelectorAll('.modal-input-field');
 
-// redirect focus from label to input on click
-inputLabels.forEach( label => { 
-    label.addEventListener("click", () => label.nextElementSibling.focus());
-});
+// // redirect focus from label to input on click
+// inputLabels.forEach( label => { 
+//     label.addEventListener("click", () => label.nextElementSibling.focus());
+// });
 
-inputFields.forEach( field => {
-    field.addEventListener("change", () => {
-        if (field.value) {
-            field.classList.add('field-focused');
-            field.previousElementSibling.classList.add('label-focused');
-        } else {
-            field.classList.remove('field-focused');
-            field.previousElementSibling.classList.remove('label-focused');
-        }
-    })
-})
+// inputFields.forEach( field => {
+//     field.addEventListener("change", () => {
+//         if (field.value) {
+//             field.classList.add('field-focused');
+//             field.previousElementSibling.classList.add('label-focused');
+//         } else {
+//             field.classList.remove('field-focused');
+//             field.previousElementSibling.classList.remove('label-focused');
+//         }
+//     })
+// })
 
 
 
@@ -39,16 +39,18 @@ document.querySelectorAll('.cta-button').forEach( button => {
 });
 
 // close button listener
-document.querySelector('#modal-close-btn').addEventListener( "click", hideModal);
+// document.querySelector('#modal-close-btn').addEventListener( "click", hideModal);
+
+
 
 // submit button logic
-document.querySelector('#cta-form').addEventListener( "submit", (e) => 
-{ 
-    e.preventDefault()
-    const data = new FormData(e.target)
-    console.log(JSON.stringify(data))
-    
 
+const ctaForm = document.querySelector('#cta-form')
+function submitForm(e) {
+    console.log(document.querySelector('#firstname').value)
+    const data = new FormData(ctaForm)
+    console.log(data)
+    e.preventDefault()
     // const response = await fetch(url, {
     //     method: 'POST', 
     //     mode: 'cors',
@@ -58,7 +60,8 @@ document.querySelector('#cta-form').addEventListener( "submit", (e) =>
     //     body: JSON.stringify(data) // body data type must match "Content-Type" header
     // });
     // const json = await response.json(); // parses JSON response into native JavaScript objects
-});
+}
+ctaForm.addEventListener("submit", submitForm);
 
 // testimonial slider
 

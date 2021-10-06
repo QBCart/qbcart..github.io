@@ -19,7 +19,12 @@
         <!-- SIGN UP MODAL -->
         <div id="modal">
             <div id="modal-body">
-                <form id="cta-form" style="display: flex; flex-direction: column;">
+                <form id="cta-form" name="cta-form">
+                    <input id="firstname" name="firstname" class="" type="text" required />
+                    <button type="submit">submit</button>
+                </form>
+
+                <!-- <form id="cta-form" name="cta-form" action="" method="POST" style="display: flex; flex-direction: column;">
                     <div class="modal-text-line">Our demo is <b>free</b> and it's the <b>real deal!</b></div>
                     <div class="modal-text-line">This means you'll need an <b>account </b>& <b>login</b> to access it.</div>
                     <div class="modal-text-line">No need to worry, because we'll set it all up for you.</div>
@@ -29,7 +34,7 @@
 
                     <div class="modal-input-wrapper">
                         <div class="modal-input-label">first name</div>
-                        <input name="first-name" class="modal-input-field" type="text" required />
+                        <input id="firstname" name="firstname" class="modal-input-field" type="text" required />
                     </div>
                     <div class="modal-input-wrapper">
                         <div class="modal-input-label">last name</div>
@@ -48,14 +53,14 @@
                         <input name="company-name" class="modal-input-field" type="text" />
                     </div>
                     <div id="modal-footer">
-                        <input id="modal-submit-btn" type="submit" value='✓'/>
+                        <input id="modal-submit-btn" type="submit" value='✓' />
                         <div id="modal-close-btn">
                             <span class="material-icons">
                                 close
                             </span>
                         </div>
                     </div>
-                </form>
+                </form> -->
             </div>
             
         </div>
