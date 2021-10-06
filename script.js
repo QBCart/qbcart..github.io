@@ -41,6 +41,13 @@ document.querySelectorAll('.cta-button').forEach( button => {
 // close button listener
 document.querySelector('#modal-close-btn').addEventListener( "click", hideModal);
 
+// submit button logic
+document.querySelector('#modal-submit-btn').addEventListener( "click", (e)=> 
+{ e.preventDefault
+    console.log('submitted')
+}
+);
+
 // testimonial slider
 
 const testimonials = document.querySelectorAll('.testimonial');
