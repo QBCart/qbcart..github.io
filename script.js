@@ -65,6 +65,7 @@ async function submitForm(e) {
         // close the form modal
         hideCtaModal()
         // create modal that confirms & gives further instructions
+        console.log(await response.json())
     
     } else {
         // the form modal remains open
