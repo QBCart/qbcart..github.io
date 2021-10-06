@@ -42,11 +42,23 @@ document.querySelectorAll('.cta-button').forEach( button => {
 document.querySelector('#modal-close-btn').addEventListener( "click", hideModal);
 
 // submit button logic
-document.querySelector('#modal-submit-btn').addEventListener( "click", (e)=> 
-{ e.preventDefault
-    console.log('submitted')
-}
-);
+document.querySelector('#cta-form').addEventListener( "submit", (e) => 
+{ 
+    e.preventDefault()
+    const data = new FormData(e.target)
+    console.log(JSON.stringify(data))
+    
+
+    // const response = await fetch(url, {
+    //     method: 'POST', 
+    //     mode: 'cors',
+    //     headers: {
+    //         'Content-Type': 'application/x-www-form-urlencoded'
+    //     },
+    //     body: JSON.stringify(data) // body data type must match "Content-Type" header
+    // });
+    // const json = await response.json(); // parses JSON response into native JavaScript objects
+});
 
 // testimonial slider
 
