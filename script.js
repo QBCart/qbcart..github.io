@@ -7,6 +7,7 @@ function showCtaModal() {
 
 function hideCtaModal() {
     backdrop.style.display = 'none';
+    document.getElementById('catch-error').style.display = 'none';
 }
 
 // modal dynamic input logic
@@ -72,12 +73,11 @@ async function submitForm(e) {
         // inject message at the top on the form 
         // oops there was an error, please check data & try again
         // if the issue persists, contact support
+        alert('res not ok')
     }
         
     } catch (error) {
-        // the form modal remains open
-        // inject message at the top on the form 
-        // there may be a problem with the internet please try again at a later time
+       document.getElementById('catch-error').style.display = 'block';
     }
  
     
