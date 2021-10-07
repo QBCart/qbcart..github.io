@@ -22,15 +22,15 @@ body {
     z-index: 100;
 }
 
-#modal {
-    display: block;
+.modal {
+    display: none;
     background-color: white;
     border: 2px solid black;
     border-radius: 10px;
     padding: .5vw;
 }
 
-#modal-body {
+.modal-body {
     display: block;
     padding: 1vw;
 }
@@ -50,6 +50,12 @@ body {
     font-size: 10px;
 }
 
+.pro-tip {
+    color: darkslategrey;
+    font-size: 12px;
+    max-width: 80%;
+    margin: .5vw auto;
+}
 #catch-error, #api-error {
     display: none;
     color: red;
@@ -144,14 +150,14 @@ input:-webkit-autofill:active {
 
 
 
-#modal-footer {
+.modal-footer {
     display: flex;
     justify-content: flex-end;
     margin-top: 1vw;
 }
     
 
-#modal-submit-btn {
+.modal-submit-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -166,12 +172,12 @@ input:-webkit-autofill:active {
     font-size: 20px;
 }
 
-#modal-submit-btn:hover {
+.modal-submit-btn:hover {
     background-color: #699933;
     cursor: pointer;
 }
 
-#modal-close-btn {
+.modal-close-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -182,7 +188,7 @@ input:-webkit-autofill:active {
     height: 30px;
     width: 35px;
 }
-#modal-close-btn:hover {
+.modal-close-btn:hover {
     background-color: grey;
     cursor: pointer;
 }

@@ -1,324 +1,449 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="script.js"></script>
     <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <title>QBCart</title>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- MODALS -->
     <div id="backdrop">
-        <!-- SIGN UP MODAL -->
-        <div id="modal">
-            <div id="modal-body">
-                <form id="cta-form" style="display: flex; flex-direction: column;">
-                    <div class="modal-text-line">Our demo is <b>free</b> and it's the <b>real deal!</b></div>
-                    <div class="modal-text-line">This means you'll need an <b>account </b>& <b>login</b> to access it.</div>
-                    <div class="modal-text-line">No need to worry, because we'll set it all up for you.</div>
-                    <div class="modal-text-line">All we need is the following information:</div>
-                    <div class="modal-text-disclaimer">We solemnly promise not to share your information with anyone else, even if they offer us a steak dinner. 
-                        <br/>We may, however, use it to contact you directly, to ask for your feedback on our product or to answer any questions you may have.</div>
-                    <div id="catch-error">
-                        Sorry, we're having difficulty reaching our server. 
-                        <br/>Please check your network connection and try again.
-                        <br/>If this problem persists, try again later, or contact our support team.
-                    </div>
-                    <div id="api-error">
-                        Sorry, your request could not be processed at this time. 
-                        <br/>Please try again, later.
-                        <br/>If this problem persists, contact our support team.
-                    </div>
-                    <div class="modal-input-wrapper">
-                        <div class="modal-input-label">first name</div>
-                        <input name="firstname" class="modal-input-field" type="text" required />
-                    </div>
-                    <div class="modal-input-wrapper">
-                        <div class="modal-input-label">last name</div>
-                        <input name="last-name" class="modal-input-field" type="text" required />
-                    </div>
-                    <div class="modal-input-wrapper">
-                        <div class="modal-input-label">email address</div>
-                        <input name="email-address" class="modal-input-field" type="email" required />
-                    </div>
-                    <div class="modal-input-wrapper">
-                        <div class="modal-input-label">phone</div>
-                        <input name="phone" class="modal-input-field" type="tel" pattern="^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$" required />
-                    </div>
-                    <div class="modal-input-wrapper">
-                        <div class="modal-input-label">company name (optional)</div>
-                        <input name="company-name" class="modal-input-field" type="text" />
-                    </div>
-                    <div id="modal-footer">
-                        <input id="modal-submit-btn" type="submit" value='✓' />
-                        <div id="modal-close-btn">
-                            <span class="material-icons">
-                                close
-                            </span>
-                        </div>
-                    </div>
-                </form>
+      <!-- CTA MODAL -->
+      <div id="cta-modal" class="modal">
+        <div class="modal-body">
+          <form id="cta-form" style="display: flex; flex-direction: column">
+            <div class="modal-text-line">
+              Our demo is <b>free</b> and it's the <b>real deal!</b>
             </div>
-            
+            <div class="modal-text-line">
+              This means you'll need an <b>account </b>& <b>login</b> to access
+              it.
+            </div>
+            <div class="modal-text-line">
+              No need to worry, because we'll set it all up for you.
+            </div>
+            <div class="modal-text-line">
+              All we need is the following information:
+            </div>
+            <div class="modal-text-disclaimer">
+              We solemnly promise not to share your information with anyone
+              else, even if they offer us a steak dinner. <br />We may, however,
+              use it to contact you directly, to ask for your feedback on our
+              product or to answer any questions you may have.
+            </div>
+            <div id="catch-error">
+              Sorry, we're having difficulty reaching our server.
+              <br />Please check your network connection and try again. <br />If
+              this problem persists, try again later, or contact our support
+              team.
+            </div>
+            <div id="api-error">
+              Sorry, your request could not be processed at this time.
+              <br />Please try again, later. <br />If this problem persists,
+              contact our support team.
+            </div>
+            <div class="modal-input-wrapper">
+              <div class="modal-input-label">first name</div>
+              <input
+                name="firstname"
+                class="modal-input-field"
+                type="text"
+                required
+              />
+            </div>
+            <div class="modal-input-wrapper">
+              <div class="modal-input-label">last name</div>
+              <input
+                name="last-name"
+                class="modal-input-field"
+                type="text"
+                required
+              />
+            </div>
+            <div class="modal-input-wrapper">
+              <div class="modal-input-label">email address</div>
+              <input
+                name="email-address"
+                class="modal-input-field"
+                type="email"
+                required
+              />
+            </div>
+            <div class="modal-input-wrapper">
+              <div class="modal-input-label">phone</div>
+              <input
+                name="phone"
+                class="modal-input-field"
+                type="tel"
+                pattern="^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$"
+                required
+              />
+            </div>
+            <div class="modal-input-wrapper">
+              <div class="modal-input-label">company name (optional)</div>
+              <input
+                name="company-name"
+                class="modal-input-field"
+                type="text"
+              />
+            </div>
+            <div class="modal-footer">
+              <input class="modal-submit-btn" type="submit" value="✓" />
+              <div class="modal-close-btn"  id="cta-modal-close-btn">
+                <span class="material-icons"> close </span>
+              </div>
+            </div>
+          </form>
         </div>
+      </div>
+      <!-- RES OK MODAL -->
+      <div id="res-ok-modal" class="modal">
+        <div class="modal-body">
+          <div class="modal-text-line">
+            Congratulations! You have successfully Signed up for a free demo of QBCart! 
+            <br/>We've prepared a unique demo account for you in our system; all you need to do is claim it. 
+            <br/>To claim your account, navigate to <a href="#" target="_blank">demo.qbcart.net</a>, and follow the setup prompts.
+        </div>
+        <div class="modal-text-line pro-tip">
+            PRO TIP: During the setup process, you will be asked to provide an email address. 
+            <br/>You must use the same email you recently provided to us in order to retrieve your demo account. 
+            <br/>This email will also be used to verify your login, and will receive any security related messages.
+        </div>
+        <div class="modal-text-line">
+            Still have questions? Check out our <a href="q-and-a.html" target="_blank">Q & A section</a>, or <a href="#" target="_blank">contact our support team</a>, directly.
+        </div>
+          </div>
+          <div class="modal-footer">
+            <div class="modal-close-btn"  id="res-ok-modal-close-btn">
+              <span class="material-icons"> close </span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div id='header'>
-        <div id='header-content'>
-            <div id="title-line">
-                <div id='title-icon'>
-                </div>
-                <div id='title'>Mobilize your QuickBooks</div>
-            </div>
-            <div id='subtitle'>Make your company more productive and efficient by extending the functionality of your QuickBooks Desktop beyond the confines of your office computer.</div>
-            <div id="header-lower">
-                <div>
-                    <button class="cta-button">TRY A FREE DEMO</button>
-                    <div id='header-rating'>
-                        <div id="stars">
-                            <span class="material-icons">
-                                star
-                            </span>
-                            <span class="material-icons">
-                                star
-                            </span>
-                            <span class="material-icons">
-                                star
-                            </span>
-                            <span class="material-icons">
-                                star
-                            </span>
-                            <span class="material-icons">
-                                star_half
-                            </span>
-                        </div>
-                        <div>Avg rating from (3) customers</div>
-                    </div>    
-                </div>
-                <div id="header-img-mobile"></div>
-            </div>
+    <!-- MAIN PAGE -->
+    <div id="header">
+      <div id="header-content">
+        <div id="title-line">
+          <div id="title-icon"></div>
+          <div id="title">Mobilize your QuickBooks</div>
         </div>
-        <div id="header-img"></div>
+        <div id="subtitle">
+          Make your company more productive and efficient by extending the
+          functionality of your QuickBooks Desktop beyond the confines of your
+          office computer.
+        </div>
+        <div id="header-lower">
+          <div>
+            <button class="cta-button">TRY A FREE DEMO</button>
+            <div id="header-rating">
+              <div id="stars">
+                <span class="material-icons"> star </span>
+                <span class="material-icons"> star </span>
+                <span class="material-icons"> star </span>
+                <span class="material-icons"> star </span>
+                <span class="material-icons"> star_half </span>
+              </div>
+              <div>Avg rating from (3) customers</div>
+            </div>
+          </div>
+          <div id="header-img-mobile"></div>
+        </div>
+      </div>
+      <div id="header-img"></div>
     </div>
     <div id="companies-carousel">
-        <!-- hiding the customer logos until approved -->
-        <div class="company-logo" style="background-image: url('./images/vector_logo.png');"></div>
-        <div class="company-logo" style="background-image: url('./images/gmr_logo.png');"></div>
-        <div class="company-logo" style="background-image: url('./images/its_logo.png');"></div>
+      <div
+        class="company-logo"
+        style="background-image: url('./images/vector_logo.png')"
+      ></div>
+      <div
+        class="company-logo"
+        style="background-image: url('./images/gmr_logo.png')"
+      ></div>
+      <div
+        class="company-logo"
+        style="background-image: url('./images/its_logo.png')"
+      ></div>
     </div>
-    <div id='fold'>
-        <div class="triplet-section">
-            <div class="triplet">
-                <div class="triplet-img" style="background-image: url('./images/handshake-2.png');"></div>
-                <div class="triplet-title">Manage Customers</div>
-                <div class="triplet-text">
-                    
-                </div>
-            </div>
-            <div class="triplet">
-                <div class="triplet-img" style="background-image: url('./images/generate-sales.png');"></div>
-                <div class="triplet-title">Generate Sales</div>
-                <div class="triplet-text">
-                   
-                </div>
-            </div>
-             <div class="triplet">
-                <div class="triplet-img" style="background-image: url('./images/monitor-company.png');"></div>
-                <div class="triplet-title">Monitor Your Company</div>
-                <div class="triplet-text">
-                </div>
-            </div>
+    <div id="fold">
+      <div class="triplet-section">
+        <div class="triplet">
+          <div
+            class="triplet-img"
+            style="background-image: url('./images/handshake-2.png')"
+          ></div>
+          <div class="triplet-title">Manage Customers</div>
+          <div class="triplet-text"></div>
         </div>
-        <div class="single-section">
-            <div class="single-img" style="background-image: url('./images/handshake-2.png');"></div>
-            <div class="single-content">
-                <div class="single-title">
-                    QBCart's intuitive mobile user interface allows you to <b>manage</b> your <b>customers'</b> information, <b>anywhere, any time</b>. 
-                </div>
-                <div class="single-line">
-                    <div class="bullet"></div>
-                    <div class="single-text">
-                        <b>Assign special pricing</b> per item, per customer
-                    </div>
-                </div>
-                <div class="single-line">
-                    <div class="bullet"></div>
-                    <div class="single-text">
-                        <b>Access customer history</b>
-                    </div>
-                </div>
-                <div class="single-line">
-                    <div class="bullet"></div>
-                    <div class="single-text">
-                        <b>Review open balances</b> including both the amount, and the age of the invoice
-                    </div>
-                </div>
-                <div class="single-line">
-                    <div class="bullet"></div>
-                    <div class="single-text">
-                        <b>Add new customers</b> using the simple 'new customer' form.
-                    </div>
-                </div> 
-            </div>
+        <div class="triplet">
+          <div
+            class="triplet-img"
+            style="background-image: url('./images/generate-sales.png')"
+          ></div>
+          <div class="triplet-title">Generate Sales</div>
+          <div class="triplet-text"></div>
         </div>
-        <div class="single-section" 
-        style="background-color: white;"
-        >
-            <div class="single-content">
-                <div class="single-title">
-                    Employees are equipped with all of the tools necessary to <b>generate sales</b> in the field <b>anywhere, any time</b>. 
-                </div>
-                <div class="single-line">
-                    <div class="bullet"></div>
-                    <div class="single-text">
-                        <b>Get instant product info</b> including photos, standard pricing, quantity on hand and, if needed, purchase cost 
-                    </div>
-                </div>
-                <div class="single-line">
-                    <div class="bullet"></div>
-                    <div class="single-text">
-                        <b>Take orders,</b> create estimates, and submit invoices
-                    </div>
-                </div>
-                <div class="single-line">
-                    <div class="bullet"></div>
-                    <div class="single-text">
-                        <b>Receive payments</b> process credit cards
-                    </div>
-                </div>
-                <div class="single-line">
-                    <div class="bullet"></div>
-                    <div class="single-text">
-                        <b>Capture customer signatures</b> using the included Esignature feature
-                    </div>
-                </div>
-                <div class="single-line">
-                    <div class="bullet"></div>
-                    <div class="single-text">
-                        <b>Set up shipments</b> for items not immediately on hand
-                    </div>
-                </div>
-            </div> 
-            <div class="single-img" style="background-image: url('./images/generate-sales.png');"></div>
+        <div class="triplet">
+          <div
+            class="triplet-img"
+            style="background-image: url('./images/monitor-company.png')"
+          ></div>
+          <div class="triplet-title">Monitor Your Company</div>
+          <div class="triplet-text"></div>
         </div>
-        <div class="single-section">
-            <div class="single-img" style="background-image: url('./images/monitor-company.png');"></div>
-            <div class="single-content">
-                <div class="single-title">
-                    <b>Monitor your company</b>'s growth using QBCart's data tools <b>anywhere, any time</b>.
-                </div>
-                <div class="single-line">
-                    <div class="bullet"></div>
-                    <div class="single-text">
-                        Track <b>sales</b> company wide, or by employee, or territory.
-                    </div>
-                </div>
-                <div class="single-line">
-                    <div class="bullet"></div>
-                    <div class="single-text">
-                        View <b>collections</b> and payment history
-                    </div>
-                </div><div class="single-line">
-                    <div class="bullet"></div>
-                    <div class="single-text">
-                        Review <b>shipments</b>, and schedules 
-                    </div>
-                </div><div class="single-line">
-                    <div class="bullet"></div>
-                    <div class="single-text">
-                        Track <b>inventory</b>, including stock by location, backorders, par lists, and inventory transfers between locations
-                    </div>
-                </div><div class="single-line">
-                    <div class="bullet"></div>
-                    <div class="single-text">
-                        Access <b>employee ARs</b>
-                    </div>
-                </div><div class="single-line">
-                    <div class="bullet"></div>
-                    <div class="single-text">
-                        Check for any <b>open balances, estimates,</b> or <b>carts</b>
-                    </div>
-                </div>
+      </div>
+      <div class="single-section">
+        <div
+          class="single-img"
+          style="background-image: url('./images/handshake-2.png')"
+        ></div>
+        <div class="single-content">
+          <div class="single-title">
+            QBCart's intuitive mobile user interface allows you to
+            <b>manage</b> your <b>customers'</b> information,
+            <b>anywhere, any time</b>.
+          </div>
+          <div class="single-line">
+            <div class="bullet"></div>
+            <div class="single-text">
+              <b>Assign special pricing</b> per item, per customer
             </div>
+          </div>
+          <div class="single-line">
+            <div class="bullet"></div>
+            <div class="single-text">
+              <b>Access customer history</b>
+            </div>
+          </div>
+          <div class="single-line">
+            <div class="bullet"></div>
+            <div class="single-text">
+              <b>Review open balances</b> including both the amount, and the age
+              of the invoice
+            </div>
+          </div>
+          <div class="single-line">
+            <div class="bullet"></div>
+            <div class="single-text">
+              <b>Add new customers</b> using the simple 'new customer' form.
+            </div>
+          </div>
         </div>
-        <div class="triplet-section triplet-mobile">
-            <div class="triplet triplet-mobile">
-                <div class="triplet-img triplet-mobile" style="background-image: url('./images/access-from-anywhere-anytime.png');"></div>
-                <div class="triplet-title triplet-mobile">Easy Integration</div>
-                <div class="triplet-text triplet-mobile">
-                    We are extending, not replacing your Quickbooks        
-                </div>
-                <div class="triplet-text triplet-mobile">Keep your data - there is no need for mass data migrations or reformatting</div>
-                <div class="triplet-text triplet-mobile">Learning is quick and easy - user interface is refeshing, clean and modern</div>
+      </div>
+      <div class="single-section" style="background-color: white">
+        <div class="single-content">
+          <div class="single-title">
+            Employees are equipped with all of the tools necessary to
+            <b>generate sales</b> in the field <b>anywhere, any time</b>.
+          </div>
+          <div class="single-line">
+            <div class="bullet"></div>
+            <div class="single-text">
+              <b>Get instant product info</b> including photos, standard
+              pricing, quantity on hand and, if needed, purchase cost
             </div>
-            <div class="line-break-mobile"></div>
-            <div class="triplet triplet-mobile">
-                <div class="triplet-img triplet-mobile" style="background-image: url('./images/access-from-any-device.jpg');"></div>
-                <div class="triplet-title triplet-mobile">Anywhere, Anytime, <br/>Any Device</div>
-                <div class="triplet-text triplet-mobile">
-                    QBCart is a cloud-based web app. 
-                </div>
-                <div class="triplet-text triplet-mobile">That means any internet-connected device can access it - just open a browser and navigate to your QBCart.</div>
-                <div class="triplet-text triplet-mobile">No downloads necessary.</div>
+          </div>
+          <div class="single-line">
+            <div class="bullet"></div>
+            <div class="single-text">
+              <b>Take orders,</b> create estimates, and submit invoices
             </div>
-            <div class="line-break-mobile"></div>
-             <div class="triplet triplet-mobile">
-                <div class="triplet-img triplet-mobile" style="background-image: url('./images/always-up-to-date.png');"></div>
-                <div class="triplet-title triplet-mobile">Updates Automagically</div>
-                <div class="triplet-text triplet-mobile">QBCart is software as a service. This means:</div>
-                <div class="triplet-text triplet-mobile">With an active subscription, your company never has to worry whether you have the latest version or are in need of an update.</div>
-                <div class="triplet-text triplet-mobile">Updates and upgrades occur seamlessly—almost magically—and never during productivity hours. </div> 
+          </div>
+          <div class="single-line">
+            <div class="bullet"></div>
+            <div class="single-text">
+              <b>Receive payments</b> process credit cards
             </div>
+          </div>
+          <div class="single-line">
+            <div class="bullet"></div>
+            <div class="single-text">
+              <b>Capture customer signatures</b> using the included Esignature
+              feature
+            </div>
+          </div>
+          <div class="single-line">
+            <div class="bullet"></div>
+            <div class="single-text">
+              <b>Set up shipments</b> for items not immediately on hand
+            </div>
+          </div>
         </div>
-        <div class="cta-banner">
-            <div class="cta-text">Tired of reading the manual? How about we give you the keys, and you take it for a spin!</div>
-            <button class="cta-button">TRY A FREE DEMO</button>
+        <div
+          class="single-img"
+          style="background-image: url('./images/generate-sales.png')"
+        ></div>
+      </div>
+      <div class="single-section">
+        <div
+          class="single-img"
+          style="background-image: url('./images/monitor-company.png')"
+        ></div>
+        <div class="single-content">
+          <div class="single-title">
+            <b>Monitor your company</b>'s growth using QBCart's data tools
+            <b>anywhere, any time</b>.
+          </div>
+          <div class="single-line">
+            <div class="bullet"></div>
+            <div class="single-text">
+              Track <b>sales</b> company wide, or by employee, or territory.
+            </div>
+          </div>
+          <div class="single-line">
+            <div class="bullet"></div>
+            <div class="single-text">
+              View <b>collections</b> and payment history
+            </div>
+          </div>
+          <div class="single-line">
+            <div class="bullet"></div>
+            <div class="single-text">
+              Review <b>shipments</b>, and schedules
+            </div>
+          </div>
+          <div class="single-line">
+            <div class="bullet"></div>
+            <div class="single-text">
+              Track <b>inventory</b>, including stock by location, backorders,
+              par lists, and inventory transfers between locations
+            </div>
+          </div>
+          <div class="single-line">
+            <div class="bullet"></div>
+            <div class="single-text">Access <b>employee ARs</b></div>
+          </div>
+          <div class="single-line">
+            <div class="bullet"></div>
+            <div class="single-text">
+              Check for any <b>open balances, estimates,</b> or <b>carts</b>
+            </div>
+          </div>
         </div>
-        <div id="testimonials">
-            <div class="testimonial testimonial-shown">
-                <div>"QBCart has put us lightyears ahead the game."</div>
-                <div>- company 1</div> 
-            </div>
-            <div class="testimonial testimonial-hidden">
-                <div>"This app saves us on average about 14 man hours a day. Without it, we'd never grow as we have."</div>
-                <div>- company 2</div> 
-            </div>
-            <div class="testimonial testimonial-hidden">
-                <div>"testimonial 3." </div>
-                <div>- company 3</div>
-            </div>
-            <div class="testimonial testimonial-hidden">
-                <div>"testimonial 4." </div>
-                <div>- company 4</div>
-            </div>
+      </div>
+      <div class="triplet-section triplet-mobile">
+        <div class="triplet triplet-mobile">
+          <div
+            class="triplet-img triplet-mobile"
+            style="
+              background-image: url('./images/access-from-anywhere-anytime.png');
+            "
+          ></div>
+          <div class="triplet-title triplet-mobile">Easy Integration</div>
+          <div class="triplet-text triplet-mobile">
+            We are extending, not replacing your Quickbooks
+          </div>
+          <div class="triplet-text triplet-mobile">
+            Keep your data - there is no need for mass data migrations or
+            reformatting
+          </div>
+          <div class="triplet-text triplet-mobile">
+            Learning is quick and easy - user interface is refeshing, clean and
+            modern
+          </div>
         </div>
-        <div id="founders-note">
-            <div id="founders-content">
-                <div id="founders-title">Our Mission</div>
-                <div id="founders-text" class="truncate-overflow">
-                    QBCart was founded in 2019 with the purpose of helping small businesses grow beyond the limited mobility, scalability and feature set of Quickbooks. Originally, the idea stemmed from the need to accomodate 
-                    <a href="founders-note.html">read more</a>
-                </div>
-            </div>
-            <div id="founders-img"></div>
+        <div class="line-break-mobile"></div>
+        <div class="triplet triplet-mobile">
+          <div
+            class="triplet-img triplet-mobile"
+            style="background-image: url('./images/access-from-any-device.jpg')"
+          ></div>
+          <div class="triplet-title triplet-mobile">
+            Anywhere, Anytime, <br />Any Device
+          </div>
+          <div class="triplet-text triplet-mobile">
+            QBCart is a cloud-based web app.
+          </div>
+          <div class="triplet-text triplet-mobile">
+            That means any internet-connected device can access it - just open a
+            browser and navigate to your QBCart.
+          </div>
+          <div class="triplet-text triplet-mobile">No downloads necessary.</div>
         </div>
-        <div id="q-and-a">
-            <div id="q-and-a-title">
-                Got Questions?
-            </div>
-            <div id="q-and-a-subtitle">
-                We may have an answer for you in in our <a href="q-and-a.html">Q & A section</a>
-            </div>
+        <div class="line-break-mobile"></div>
+        <div class="triplet triplet-mobile">
+          <div
+            class="triplet-img triplet-mobile"
+            style="background-image: url('./images/always-up-to-date.png')"
+          ></div>
+          <div class="triplet-title triplet-mobile">Updates Automagically</div>
+          <div class="triplet-text triplet-mobile">
+            QBCart is software as a service. This means:
+          </div>
+          <div class="triplet-text triplet-mobile">
+            With an active subscription, your company never has to worry whether
+            you have the latest version or are in need of an update.
+          </div>
+          <div class="triplet-text triplet-mobile">
+            Updates and upgrades occur seamlessly—almost magically—and never
+            during productivity hours.
+          </div>
         </div>
+      </div>
+      <div class="cta-banner">
+        <div class="cta-text">
+          Tired of reading the manual? How about we give you the keys, and you
+          take it for a spin!
+        </div>
+        <button class="cta-button">TRY A FREE DEMO</button>
+      </div>
+      <div id="testimonials">
+        <div class="testimonial testimonial-shown">
+          <div>"QBCart has put us lightyears ahead the game."</div>
+          <div>- company 1</div>
+        </div>
+        <div class="testimonial testimonial-hidden">
+          <div>
+            "This app saves us on average about 14 man hours a day. Without it,
+            we'd never grow as we have."
+          </div>
+          <div>- company 2</div>
+        </div>
+        <div class="testimonial testimonial-hidden">
+          <div>"testimonial 3."</div>
+          <div>- company 3</div>
+        </div>
+        <div class="testimonial testimonial-hidden">
+          <div>"testimonial 4."</div>
+          <div>- company 4</div>
+        </div>
+      </div>
+      <div id="founders-note">
+        <div id="founders-content">
+          <div id="founders-title">Our Mission</div>
+          <div id="founders-text" class="truncate-overflow">
+            QBCart was founded in 2019 with the purpose of helping small
+            businesses grow beyond the limited mobility, scalability and feature
+            set of Quickbooks. Originally, the idea stemmed from the need to
+            accomodate
+            <a href="founders-note.html">read more</a>
+          </div>
+        </div>
+        <div id="founders-img"></div>
+      </div>
+      <div id="q-and-a">
+        <div id="q-and-a-title">Got Questions?</div>
+        <div id="q-and-a-subtitle">
+          We may have an answer for you in in our
+          <a href="q-and-a.html">Q & A section</a>
+        </div>
+      </div>
     </div>
-    <div id="footer">
-        ©2021 QBCart Inc. - All Rights Reserved
-    </div>
-</body>
+    <div id="footer">©2021 QBCart Inc. - All Rights Reserved</div>
+  </body>
 </html>

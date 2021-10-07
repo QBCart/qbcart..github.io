@@ -1,15 +1,33 @@
 // modal view logic
 const backdrop = document.getElementById('backdrop');
 
+// cta modal
 function showCtaModal() {
     backdrop.style.display = 'flex';
+    document.getElementById('cta-modal').style.display = 'block';
 }
 
 function hideCtaModal() {
     backdrop.style.display = 'none';
     document.getElementById('catch-error').style.display = 'none';
     document.getElementById('api-error').style.display = 'none';
+    document.getElementById('cta-modal').style.display = 'none';
 }
+
+// res ok modal
+
+function showResOkModal() {
+    backdrop.style.display = 'flex';
+    document.getElementById('res-ok-modal').style.display = 'block';
+}
+
+function hideResOkModal() {
+    backdrop.style.display = 'none';
+    document.getElementById('res-ok-modal').style.display = 'none';
+}
+
+// trigger modal on page load for local development
+showResOkModal()
 
 // modal dynamic input logic
 const inputWrappers = document.querySelectorAll('.modal-input-wrapper');
@@ -40,9 +58,9 @@ document.querySelectorAll('.cta-button').forEach( button => {
     button.addEventListener("click", showCtaModal);
 });
 
-// close button listener
-document.querySelector('#modal-close-btn').addEventListener( "click", hideCtaModal);
-
+// close button listeners
+document.querySelector('#cta-modal-close-btn').addEventListener( "click", hideCtaModal);
+document.querySelector('#res-ok-modal-close-btn').addEventListener( "click", hideResOkModal);
 
 
 // cta form submit logic
@@ -63,11 +81,11 @@ async function submitForm(e) {
         body: new FormData(ctaForm)
     });
 
-    if (!response.ok) {
+    if (response.ok) {
         // close the form modal
         hideCtaModal()
         // create modal that confirms & gives further instructions
-        console.log(await response.json())
+        showResOkModal()
     
     } else {
         document.getElementById('api-error').style.display = 'block';
