@@ -8,6 +8,7 @@ function showCtaModal() {
 function hideCtaModal() {
     backdrop.style.display = 'none';
     document.getElementById('catch-error').style.display = 'none';
+    document.getElementById('api-error').style.display = 'none';
 }
 
 // modal dynamic input logic
@@ -62,18 +63,14 @@ async function submitForm(e) {
         body: new FormData(ctaForm)
     });
 
-    if (response.ok) {
+    if (!response.ok) {
         // close the form modal
         hideCtaModal()
         // create modal that confirms & gives further instructions
         console.log(await response.json())
     
     } else {
-        // the form modal remains open
-        // inject message at the top on the form 
-        // oops there was an error, please check data & try again
-        // if the issue persists, contact support
-        alert('res not ok')
+        document.getElementById('api-error').style.display = 'block';
     }
         
     } catch (error) {

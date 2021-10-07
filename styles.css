@@ -50,7 +50,7 @@ body {
     font-size: 10px;
 }
 
-#catch-error {
+#catch-error, #api-error {
     display: none;
     color: red;
     font-size: 14px;
