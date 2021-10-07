@@ -1,129 +1,122 @@
 // modal view logic
-const backdrop = document.getElementById('backdrop');
+const backdrop = document.getElementById("backdrop");
 
 // cta modal
 function showCtaModal() {
-    backdrop.style.display = 'flex';
-    document.getElementById('cta-modal').style.display = 'block';
+  backdrop.style.display = "flex";
+  document.getElementById("cta-modal").style.display = "block";
 }
 
 function hideCtaModal() {
-    backdrop.style.display = 'none';
-    document.getElementById('catch-error').style.display = 'none';
-    document.getElementById('api-error').style.display = 'none';
-    document.getElementById('cta-modal').style.display = 'none';
+  backdrop.style.display = "none";
+  document.getElementById("catch-error").style.display = "none";
+  document.getElementById("api-error").style.display = "none";
+  document.getElementById("cta-modal").style.display = "none";
 }
 
 // res ok modal
 
 function showResOkModal() {
-    backdrop.style.display = 'flex';
-    document.getElementById('res-ok-modal').style.display = 'block';
+  backdrop.style.display = "flex";
+  document.getElementById("res-ok-modal").style.display = "block";
 }
 
 function hideResOkModal() {
-    backdrop.style.display = 'none';
-    document.getElementById('res-ok-modal').style.display = 'none';
+  backdrop.style.display = "none";
+  document.getElementById("res-ok-modal").style.display = "none";
 }
 
-// trigger modal on page load for local development
-showResOkModal()
-
 // modal dynamic input logic
-const inputWrappers = document.querySelectorAll('.modal-input-wrapper');
-const inputLabels = document.querySelectorAll('.modal-input-label');
-const inputFields = document.querySelectorAll('.modal-input-field');
+const inputWrappers = document.querySelectorAll(".modal-input-wrapper");
+const inputLabels = document.querySelectorAll(".modal-input-label");
+const inputFields = document.querySelectorAll(".modal-input-field");
 
 // redirect focus from label to input on click
-inputLabels.forEach( label => { 
-    label.addEventListener("click", () => label.nextElementSibling.focus());
+inputLabels.forEach((label) => {
+  label.addEventListener("click", () => label.nextElementSibling.focus());
 });
 
-inputFields.forEach( field => {
-    field.addEventListener("change", () => {
-        if (field.value) {
-            field.classList.add('field-focused');
-            field.previousElementSibling.classList.add('label-focused');
-        } else {
-            field.classList.remove('field-focused');
-            field.previousElementSibling.classList.remove('label-focused');
-        }
-    })
-})
-
-
+inputFields.forEach((field) => {
+  field.addEventListener("change", () => {
+    if (field.value) {
+      field.classList.add("field-focused");
+      field.previousElementSibling.classList.add("label-focused");
+    } else {
+      field.classList.remove("field-focused");
+      field.previousElementSibling.classList.remove("label-focused");
+    }
+  });
+});
 
 // cta listeners
-document.querySelectorAll('.cta-button').forEach( button => { 
-    button.addEventListener("click", showCtaModal);
+document.querySelectorAll(".cta-button").forEach((button) => {
+  button.addEventListener("click", showCtaModal);
 });
 
 // close button listeners
-document.querySelector('#cta-modal-close-btn').addEventListener( "click", hideCtaModal);
-document.querySelector('#res-ok-modal-close-btn').addEventListener( "click", hideResOkModal);
-
+document
+  .querySelector("#cta-modal-close-btn")
+  .addEventListener("click", hideCtaModal);
+document
+  .querySelector("#res-ok-modal-close-btn")
+  .addEventListener("click", hideResOkModal);
 
 // cta form submit logic
 
-const ctaForm = document.querySelector('#cta-form');
+const ctaForm = document.querySelector("#cta-form");
 
 async function submitForm(e) {
+  e.preventDefault();
 
-    e.preventDefault();
-
-    try {
-        const response = await fetch('https://landing-page-api.azurewebsites.net/api/demo', {
-        method: 'POST', 
-        mode: 'cors',
+  try {
+    const response = await fetch(
+      "https://landing-page-api.azurewebsites.net/api/demo",
+      {
+        method: "POST",
+        mode: "cors",
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
+          "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: new FormData(ctaForm)
-    });
+        body: new FormData(ctaForm),
+      }
+    );
 
     if (response.ok) {
-        // close the form modal
-        hideCtaModal()
-        // create modal that confirms & gives further instructions
-        showResOkModal()
-    
+      hideCtaModal();
+      showResOkModal();
     } else {
-        document.getElementById('api-error').style.display = 'block';
+      document.getElementById("api-error").style.display = "block";
     }
-        
-    } catch (error) {
-       document.getElementById('catch-error').style.display = 'block';
-    }
- 
-    
+  } catch (error) {
+    document.getElementById("catch-error").style.display = "block";
+  }
 }
 
 ctaForm.onsubmit = submitForm;
 
 // testimonial slider
 
-const testimonials = document.querySelectorAll('.testimonial');
+const testimonials = document.querySelectorAll(".testimonial");
 
 let countIndex = 0;
 
 function incrementCount() {
-    
-    if (countIndex < testimonials.length - 1) {
-        countIndex++
-    } else {
-        countIndex = 0
-    };
-    
-    testimonials[countIndex].classList.remove('testimonial-hidden');
-    testimonials[countIndex].classList.add('testimonial-shown');
-    
-    if (countIndex > 0) {
-        testimonials[countIndex - 1].classList.remove('testimonial-shown');
-        testimonials[countIndex - 1].classList.add('testimonial-hidden');
-    } else {
-        testimonials[testimonials.length - 1].classList.remove('testimonial-shown');
-        testimonials[testimonials.length - 1].classList.add('testimonial-hidden');
-    }
-};
+  if (countIndex < testimonials.length - 1) {
+    countIndex++;
+  } else {
+    countIndex = 0;
+  }
+
+  testimonials[countIndex].classList.remove("testimonial-hidden");
+  testimonials[countIndex].classList.add("testimonial-shown");
+
+  if (countIndex > 0) {
+    testimonials[countIndex - 1].classList.remove("testimonial-shown");
+    testimonials[countIndex - 1].classList.add("testimonial-hidden");
+  } else {
+    testimonials[testimonials.length - 1].classList.remove("testimonial-shown");
+    testimonials[testimonials.length - 1].classList.add("testimonial-hidden");
+  }
+}
 
 setInterval(incrementCount, 5000);

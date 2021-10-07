@@ -38,6 +38,7 @@ body {
 .modal-text-line {
     text-align: center;
     margin: .3vw 0;
+    /* max-width: 500px; */
 }
 
 .modal-text-disclaimer {
@@ -52,9 +53,9 @@ body {
 
 .pro-tip {
     color: darkslategrey;
-    font-size: 12px;
+    font-size: 13px;
     max-width: 80%;
-    margin: .5vw auto;
+    margin: 30px auto 0 auto;
 }
 #catch-error, #api-error {
     display: none;
