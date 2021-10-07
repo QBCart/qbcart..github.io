@@ -26,7 +26,13 @@
                     <div class="modal-text-line">All we need is the following information:</div>
                     <div class="modal-text-disclaimer">We solemnly promise not to share your information with anyone else, even if they offer us a steak dinner. 
                         <br/>We may, however, use it to contact you directly, to ask for your feedback on our product or to answer any questions you may have.</div>
-
+                    <div id="catch-error">
+                        Sorry, we're having difficulty reaching our server. 
+                        <!-- <br/>This could be due to any number of things, internet connectivity, server maintenance, etc. 
+                        <br/>You can try again now, or try again later. -->
+                        <br/>Please check your network connection and try again.
+                        <br/>If this problem persists, try again, later, or contact our support team.
+                    </div>
                     <div class="modal-input-wrapper">
                         <div class="modal-input-label">first name</div>
                         <input name="firstname" class="modal-input-field" type="text" required />
@@ -41,7 +47,7 @@
                     </div>
                     <div class="modal-input-wrapper">
                         <div class="modal-input-label">phone</div>
-                        <input name="phone" class="modal-input-field" type="text" required />
+                        <input name="phone" class="modal-input-field" type="tel" pattern="^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$" required />
                     </div>
                     <div class="modal-input-wrapper">
                         <div class="modal-input-label">company name (optional)</div>

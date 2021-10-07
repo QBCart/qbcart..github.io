@@ -50,6 +50,14 @@ body {
     font-size: 10px;
 }
 
+#catch-error {
+    display: none;
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    margin: 1vw auto;
+}
+
 /* MODAL DYNAMIC INPUT STYLES */
 
 /* remove webkit styles */
@@ -98,11 +106,16 @@ input:-webkit-autofill:active {
     height: 100%;
     border: 1px solid grey;
     border-radius: 4px;
-    background-color: transparent;
+    background-color: white;
     outline: none;
     font-size: 16px;
     padding-left: 15px
   }
+
+  /* disable browser input color change on autofill */
+  input:-webkit-autofill {
+    -webkit-box-shadow:0 0 0 50px white inset;
+}
 
   .field-focused {
     border: 2px solid grey;
