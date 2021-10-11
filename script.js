@@ -49,7 +49,8 @@ inputFields.forEach((field) => {
 
 // cta listeners
 document.querySelectorAll(".cta-button").forEach((button) => {
-  button.addEventListener("click", showCtaModal);
+  // button.addEventListener("click", showCtaModal);
+  button.addEventListener("click", ()=>alert('Sorry, demo is not available at this time. Please try again, later.'));
 });
 
 // close button listeners
