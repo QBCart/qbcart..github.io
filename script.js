@@ -68,6 +68,10 @@ const ctaForm = document.querySelector("#cta-form");
 async function submitForm(e) {
   e.preventDefault();
 
+  const formData = new FormData(ctaForm);
+  const data = {};
+  formData.forEach((value, key) => (data[key] = value));
+
   try {
     const response = await fetch(
       "https://landing-page-api.azurewebsites.net/api/demo",
@@ -75,9 +79,9 @@ async function submitForm(e) {
         method: "POST",
         mode: "cors",
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+          "Content-Type": "application/json",
         },
-        body: new FormData(ctaForm),
+        body: JSON.stringify(data),
       }
     );
 
