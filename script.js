@@ -88,6 +88,7 @@ async function submitForm(e) {
       hideCtaModal();
       showResOkModal();
     } else {
+      document.getElementById("api-error-response").innerText = await response.text()
       document.getElementById("api-error").style.display = "block";
     }
   } catch (error) {
