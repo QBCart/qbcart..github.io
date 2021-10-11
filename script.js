@@ -69,6 +69,7 @@ async function submitForm(e) {
 
   const formData = {};
   new FormData(ctaForm).forEach((value, key) => (formData[key] = value));
+  
 
   try {
     const response = await fetch(
@@ -85,6 +86,10 @@ async function submitForm(e) {
 
     if (response.ok) {
       ctaForm.reset()
+      inputFields.forEach((field) => {
+        field.classList.remove("field-focused");
+        field.previousElementSibling.classList.remove("label-focused");
+      });
       hideCtaModal();
       showResOkModal();
     } else {
