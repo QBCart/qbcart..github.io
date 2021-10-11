@@ -68,9 +68,8 @@ const ctaForm = document.querySelector("#cta-form");
 async function submitForm(e) {
   e.preventDefault();
 
-  const formData = new FormData(ctaForm);
-  const data = {};
-  formData.forEach((value, key) => (data[key] = value));
+  const formData = {};
+  new FormData(ctaForm).forEach((value, key) => (formData[key] = value));
 
   try {
     const response = await fetch(
@@ -81,7 +80,7 @@ async function submitForm(e) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(formData),
       }
     );
 
