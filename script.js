@@ -84,6 +84,7 @@ async function submitForm(e) {
     );
 
     if (response.ok) {
+      ctaForm.reset()
       hideCtaModal();
       showResOkModal();
     } else {
