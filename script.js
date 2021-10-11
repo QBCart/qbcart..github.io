@@ -9,8 +9,7 @@ function showCtaModal() {
 
 function hideCtaModal() {
   backdrop.style.display = "none";
-  document.getElementById("catch-error").style.display = "none";
-  document.getElementById("api-error").style.display = "none";
+  document.getElementById("error-message").style.display = "none";
   document.getElementById("cta-modal").style.display = "none";
 }
 
@@ -88,11 +87,15 @@ async function submitForm(e) {
       hideCtaModal();
       showResOkModal();
     } else {
-      document.getElementById("api-error-response").innerText = await response.text()
-      document.getElementById("api-error").style.display = "block";
+      document.getElementById("error-message").innerHTML = await response.text()
+      document.getElementById("error-message").style.display = "block";
     }
   } catch (error) {
-    document.getElementById("catch-error").style.display = "block";
+
+    document.getElementById("error-message").innerHTML = `Sorry, we're having difficulty reaching our server.
+      <br />Please check your network connection and try again. 
+      <br />If this problem persists, try again later, or contact our support team.`
+    document.getElementById("error-message").style.display = "block";
   }
 }
 

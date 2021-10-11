@@ -57,7 +57,8 @@ body {
     max-width: 80%;
     margin: 30px auto 0 auto;
 }
-#catch-error, #api-error {
+
+#error-message {
     display: none;
     color: red;
     font-size: 14px;
