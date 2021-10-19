@@ -37,6 +37,13 @@ hr {
     color: blue;
   }
 
+  .pro-tip {
+    color: darkslategrey;
+    font-size: 13px;
+    max-width: 80%;
+    margin: 30px auto 0 auto;
+  }
+
   @media screen and (min-width: 768px) {
     hr {
         margin: 60px auto; 
