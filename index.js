@@ -15,15 +15,15 @@ function hideCtaModal() {
 
 // res ok modal
 
-function showResOkModal() {
-  backdrop.style.display = "flex";
-  document.getElementById("res-ok-modal").style.display = "block";
-}
+// function showResOkModal() {
+//   backdrop.style.display = "flex";
+//   document.getElementById("res-ok-modal").style.display = "block";
+// }
 
-function hideResOkModal() {
-  backdrop.style.display = "none";
-  document.getElementById("res-ok-modal").style.display = "none";
-}
+// function hideResOkModal() {
+//   backdrop.style.display = "none";
+//   document.getElementById("res-ok-modal").style.display = "none";
+// }
 
 // modal dynamic input logic
 const inputWrappers = document.querySelectorAll(".modal-input-wrapper");
@@ -57,9 +57,11 @@ document.querySelectorAll(".cta-button").forEach((button) => {
 document
   .querySelector("#cta-modal-close-btn")
   .addEventListener("click", hideCtaModal);
-document
-  .querySelector("#res-ok-modal-close-btn")
-  .addEventListener("click", hideResOkModal);
+
+
+// document
+//   .querySelector("#res-ok-modal-close-btn")
+//   .addEventListener("click", hideResOkModal);
 
 // cta form submit logic
 
@@ -92,7 +94,9 @@ async function submitForm(e) {
         field.previousElementSibling.classList.remove("label-focused");
       });
       hideCtaModal();
-      showResOkModal();
+      // showResOkModal();
+
+      location.href = '/success.html?email=' + await response.text();
     } else {
       document.getElementById("error-message").innerHTML = await response.text()
       document.getElementById("error-message").style.display = "block";
