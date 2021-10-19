@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="script.js"></script>
-    <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="stylesheet" href="styles.css" />
+    <title>QBCart</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,12 +17,12 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <title>QBCart</title>
+    <script defer src="/index.js"></script>
   </head>
   <body>
-<!-- MODALS -->
+    <!-- MODALS -->
     <div id="backdrop">
-<!-- CTA MODAL -->
+      <!-- CTA MODAL -->
       <div id="cta-modal" class="modal">
         <div class="modal-body">
           <form id="cta-form" style="display: flex; flex-direction: column">
@@ -45,7 +45,11 @@
               use it to contact you directly, to ask for your feedback on our
               product or to answer any questions you may have.
             </div>
-            <div class="pro-tip modal-text-line">Have you already submitted this form? <br/> You can navigate straight to your user login by <a href="https://demo.qbcart.app">Clicking Here</a></div>
+            <div class="pro-tip modal-text-line">
+              Have you already submitted this form? <br />
+              You can navigate straight to your user login by
+              <a href="https://demo.qbcart.app">Clicking Here</a>
+            </div>
             <div id="error-message"></div>
             <div class="modal-input-wrapper">
               <div class="modal-input-label">first name</div>
@@ -94,42 +98,15 @@
             </div>
             <div class="modal-footer">
               <input class="modal-submit-btn" type="submit" value="✓" />
-              <div class="modal-close-btn"  id="cta-modal-close-btn">
+              <div class="modal-close-btn" id="cta-modal-close-btn">
                 <span class="material-icons"> close </span>
               </div>
             </div>
           </form>
         </div>
       </div>
-<!-- RES OK MODAL -->
-      <div id="res-ok-modal" class="modal">
-        <div class="modal-body">
-          <div class="modal-text-line">
-            <div class="modal-text-line">
-              Thank you for your information!
-              <br/>You are now eligible to try out a free demo of QBCart.
-            </div>
-            <div class="modal-text-line">
-              <br/>Click this link <a href="https://demo.qbcart.app" target="_blank">demo.qbcart.app</a>, and choose "sign up" to create an account.
-            </div>
-            <div class="modal-text-line">
-              <b>IMPORTANT! When signing up, you MUST use the same email that you provided to us earlier.</b>
-            </div>
-            
-        </div>
-        <div class="modal-text-line pro-tip">
-            Still have questions? Check out our <a href="q-and-a.html" target="_blank">Q & A section</a>, or <a href="#" target="_blank">contact our support team</a>, directly.
-        </div>
-          </div>
-          <div class="modal-footer">
-            <div class="modal-close-btn"  id="res-ok-modal-close-btn">
-              <span class="material-icons"> close </span>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-<!-- MAIN PAGE -->
+    <!-- MAIN PAGE -->
     <div id="header">
       <div id="header-content">
         <div id="title-line">
@@ -160,7 +137,7 @@
       </div>
       <div id="header-img"></div>
     </div>
-<!-- COMPANY CAROUSEL -->
+    <!-- COMPANY CAROUSEL -->
     <div id="companies-carousel">
       <div
         class="company-logo"
@@ -175,7 +152,7 @@
         style="background-image: url('./images/its_logo.png')"
       ></div>
     </div>
-<!-- MAIN FOLD -->
+    <!-- MAIN FOLD -->
     <div id="fold">
       <div class="triplet-section">
         <div class="triplet">
@@ -391,7 +368,7 @@
           </div>
         </div>
       </div>
-<!-- CTA BANNER -->
+      <!-- CTA BANNER -->
       <div class="cta-banner">
         <div class="cta-text">
           Tired of reading the manual? How about we give you the keys, and you
@@ -399,7 +376,7 @@
         </div>
         <button class="cta-button">TRY A FREE DEMO</button>
       </div>
-<!-- TESTIMONIALS -->
+      <!-- TESTIMONIALS -->
       <!-- <div id="testimonials">
         <div class="testimonial testimonial-shown">
           <div>"QBCart has put us lightyears ahead the game."</div>
@@ -421,7 +398,7 @@
           <div>- company 4</div>
         </div>
       </div> -->
-<!-- FOUNDERS NOTE -->
+      <!-- FOUNDERS NOTE -->
       <div id="founders-note">
         <div id="founders-content">
           <div id="founders-title">Our Mission</div>
@@ -435,7 +412,7 @@
         </div>
         <div id="founders-img"></div>
       </div>
-<!-- Q & A -->
+      <!-- Q & A -->
       <div id="q-and-a">
         <div id="q-and-a-title">Got Questions?</div>
         <div id="q-and-a-subtitle">
@@ -444,7 +421,7 @@
         </div>
       </div>
     </div>
-<!-- FOOTER -->
+    <!-- FOOTER -->
     <div id="footer">©2021 QBCart Inc. - All Rights Reserved</div>
   </body>
 </html>
