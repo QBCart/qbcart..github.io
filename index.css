@@ -3,11 +3,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
-  --triplet-width: calc(100% / 3);
-  --header-content-width: 46%;
+  --triplet-width: calc(100vw / 3);
+  --header-content-width: 46vw;
   --header-content-height: calc(var(--header-content-width) * 0.65);
-  --header-img-width: 46%;
-  --single-content-width: 55%;
+  --header-img-width: 46vw;
+  --single-content-width: 55vw;
   background-color: rgb(240, 240, 240);
 }
 
@@ -199,6 +199,8 @@ input:-webkit-autofill {
   background-color: grey;
   cursor: pointer;
 }
+
+/* PAGE STYLES */
 
 #header {
   display: flex;
